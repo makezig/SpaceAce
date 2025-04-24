@@ -16,14 +16,9 @@ public class DetectCollision : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) // Destroying gameobjects when they collide
     {
-
         Debug.Log("heh");
         GameManager.Instance.AddPoints(scoreValue); // Add points to score
         Destroy(gameObject);
         Destroy(other.gameObject);
-        
-        
-
-
     }
 }

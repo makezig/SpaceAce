@@ -11,6 +11,7 @@ public class SpawnManager : MonoBehaviour
 
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
+    private GameManager gameManager;
 
     
     
@@ -19,6 +20,7 @@ public class SpawnManager : MonoBehaviour
     {
         // Start spawning Animals randomly
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,9 @@ public class SpawnManager : MonoBehaviour
         int spawnIndex = Random.Range(0, spawnPrefabs.Length); // Randomly generate animal index
 
         // Spawn the animal based on index and position
-        Instantiate(spawnPrefabs[spawnIndex], spawnPos, spawnPrefabs[spawnIndex].transform.rotation);
+        if (gameManager.gameOver == false)
+        {
+            Instantiate(spawnPrefabs[spawnIndex], spawnPos, spawnPrefabs[spawnIndex].transform.rotation);
+        }
     }
 }
