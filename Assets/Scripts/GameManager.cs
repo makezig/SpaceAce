@@ -9,8 +9,19 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public GameOverScreen gameOverScreen;
 
+    private AudioSource audioSource;
+    private AudioSource explosion; // This is your SFX AudioSource
+
+    public AudioClip explosionSFX; // <-- THIS is the actual AudioClip
+    public AudioClip laserSFX; // drag in another AudioClip via Inspector
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+
+        explosion = gameObject.AddComponent<AudioSource>();
+        explosion.playOnAwake = false;
+
         Debug.Log("GUGUGAGA");
         gameOver = false;
     }
@@ -50,7 +61,14 @@ public class GameManager : MonoBehaviour
         Score += points;
         
         Debug.Log("Score: " + Score);
-        
+
+        if (explosionSFX != null)
+        {
+            explosion.pitch = Random.Range(0.8f, 1.0f); // Slight random pitch variation
+            explosion.PlayOneShot(explosionSFX, 0.6f); // 0.5 = 50% volume
+            
+            explosion.PlayOneShot(laserSFX, 0.7f); // different clip, different volume
+        }
     }
     public void SetGameOver(bool state)
     {
