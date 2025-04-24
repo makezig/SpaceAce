@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 8120232987737376269}
   - component: {fileID: 7335916545700849240}
   m_Layer: 0
-  m_Name: Animal_Fox_01
+  m_Name: SpaceEnemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

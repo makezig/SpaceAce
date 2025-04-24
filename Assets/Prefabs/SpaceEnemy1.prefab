@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: -5633150894583268762}
   - component: {fileID: 3452794469010719176}
   m_Layer: 0
-  m_Name: Animal_Cow_White
+  m_Name: SpaceEnemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
