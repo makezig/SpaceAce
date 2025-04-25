@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] spawnPrefabs; // Allows putting spawnable prefabs in
     private float spawnRangeX = 20;
-    private float spawnPosZ = 30; // Where to spawn on z-axis
+    private float spawnPosZ = 60; // Where to spawn on z-axis
 
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
